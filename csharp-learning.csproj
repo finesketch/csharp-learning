@@ -10,6 +10,7 @@
     <Folder Include="1. Array and string manipulation\" />
     <Folder Include="2. Hashing and hash tables\" />
     <Folder Include="4. Sorting, searching, and logarithms\" />
+    <Folder Include="5. Trees and graphs\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="xunit" Version="2.4.0" />
