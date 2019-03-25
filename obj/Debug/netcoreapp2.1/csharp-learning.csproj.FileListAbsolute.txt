@@ -1,0 +1,14 @@
+/Users/kyle/Documents/github/FineSketch/csharp-learning/obj/Debug/netcoreapp2.1/csharp-learning.csprojAssemblyReference.cache
+/Users/kyle/Documents/github/FineSketch/csharp-learning/obj/Debug/netcoreapp2.1/csharp-learning.csproj.CoreCompileInputs.cache
+/Users/kyle/Documents/github/FineSketch/csharp-learning/obj/Debug/netcoreapp2.1/csharp-learning.AssemblyInfoInputs.cache
+/Users/kyle/Documents/github/FineSketch/csharp-learning/obj/Debug/netcoreapp2.1/csharp-learning.AssemblyInfo.cs
+/Users/kyle/Documents/github/FineSketch/csharp-learning/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/kyle/Documents/github/FineSketch/csharp-learning/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/kyle/Documents/github/FineSketch/csharp-learning/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/kyle/Documents/github/FineSketch/csharp-learning/bin/Debug/netcoreapp2.1/csharp-learning.deps.json
+/Users/kyle/Documents/github/FineSketch/csharp-learning/bin/Debug/netcoreapp2.1/csharp-learning.runtimeconfig.json
+/Users/kyle/Documents/github/FineSketch/csharp-learning/bin/Debug/netcoreapp2.1/csharp-learning.runtimeconfig.dev.json
+/Users/kyle/Documents/github/FineSketch/csharp-learning/bin/Debug/netcoreapp2.1/csharp-learning.dll
+/Users/kyle/Documents/github/FineSketch/csharp-learning/bin/Debug/netcoreapp2.1/csharp-learning.pdb
+/Users/kyle/Documents/github/FineSketch/csharp-learning/obj/Debug/netcoreapp2.1/csharp-learning.dll
+/Users/kyle/Documents/github/FineSketch/csharp-learning/obj/Debug/netcoreapp2.1/csharp-learning.pdb

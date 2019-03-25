@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>csharp_learning</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="1. Array and string manipulation\" />
+    <Folder Include="2. Hashing and hash tables\" />
+    <Folder Include="4. Sorting, searching, and logarithms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.4.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+  </ItemGroup>
+</Project>
