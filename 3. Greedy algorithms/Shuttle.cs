@@ -48,13 +48,16 @@ namespace csharp_learning.Greedyalgorithms
             var initial = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             var shuffled = (int[])initial.Clone();
             Shuffle(shuffled);
-            Console.WriteLine($"Initial array: [{string.Join(", ", initial)}]");
-            Console.WriteLine($"Shuffled array: [{string.Join(", ", shuffled)}]");
 
-            for (int i = 0; i < initial.Length - 1; i++)
-            {
-                Assert.NotEqual(initial[i], shuffled[i]);
-            }
+            var first = string.Join(", ", initial);
+            var second = string.Join(", ", shuffled);
+
+            Assert.NotEqual(first, second);
+
+            //for (int i = 0; i < initial.Length - 1; i++)
+            //{
+            //    Assert.NotEqual(initial[i], shuffled[i]);
+            //}
         }
     }
 }
