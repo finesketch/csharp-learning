@@ -70,15 +70,23 @@ namespace csharp_learning.Greedyalgorithms
                 throw new ArgumentException("Less than 3 items!", nameof(arrayOfInts));
             }
 
-            var highest3 = arrayOfInts.ToList().OrderByDescending(m => m).Take(3);
-            int highestProductOf3 = 1;
+            var highest3Descending = arrayOfInts.ToList().OrderByDescending(m => m).Take(3);
+            int highestProductOf3Descending = 1;
 
-            foreach (var item in highest3)
+            foreach (var item in highest3Descending)
             {
-                highestProductOf3 *= item;
+                highestProductOf3Descending *= item;
             }
 
-            return highestProductOf3;
+            var highest3Ascending = arrayOfInts.ToList().OrderBy(m => m).Take(3);
+            int highestProductOf3Ascending = 1;
+
+            foreach (var item in highest3Ascending)
+            {
+                highestProductOf3Ascending *= item;
+            }
+
+            return Math.Max(highestProductOf3Descending, highestProductOf3Ascending);
         }
 
 
@@ -86,7 +94,7 @@ namespace csharp_learning.Greedyalgorithms
         // Tests
 
         [Fact]
-        public void ShortArrayTest()
+        public void HighestProductOf3_ShortArrayTest()
         {
             var actual = HighestProductOf3(new int[] { 1, 2, 3, 4 });
             var expected = 24;
@@ -94,7 +102,7 @@ namespace csharp_learning.Greedyalgorithms
         }
 
         [Fact]
-        public void LongerArrayTest()
+        public void HighestProductOf3_LongerArrayTest()
         {
             var actual = HighestProductOf3(new int[] { 6, 1, 3, 5, 7, 8, 2 });
             var expected = 336;
@@ -102,7 +110,7 @@ namespace csharp_learning.Greedyalgorithms
         }
 
         [Fact]
-        public void ArrayHasOneNegativeTest()
+        public void HighestProductOf3_ArrayHasOneNegativeTest()
         {
             var actual = HighestProductOf3(new int[] { -5, 4, 8, 2, 3 });
             var expected = 96;
@@ -110,7 +118,7 @@ namespace csharp_learning.Greedyalgorithms
         }
 
         [Fact]
-        public void ArrayHasTwoNegativesTest()
+        public void HighestProductOf3_ArrayHasTwoNegativesTest()
         {
             var actual = HighestProductOf3(new int[] { -10, 1, 3, 2, -10 });
             var expected = 300;
@@ -118,7 +126,7 @@ namespace csharp_learning.Greedyalgorithms
         }
 
         [Fact]
-        public void ArrayHasAllNegativesTest()
+        public void HighestProductOf3_ArrayHasAllNegativesTest()
         {
             var actual = HighestProductOf3(new int[] { -5, -1, -3, -2 });
             var expected = -6;
@@ -126,19 +134,19 @@ namespace csharp_learning.Greedyalgorithms
         }
 
         [Fact]
-        public void ExceptionWithEmptyArrayTest()
+        public void HighestProductOf3_ExceptionWithEmptyArrayTest()
         {
             Assert.Throws<ArgumentException>(() => HighestProductOf3(new int[] { }));
         }
 
         [Fact]
-        public void ExceptionWithOneNumberTest()
+        public void HighestProductOf3_ExceptionWithOneNumberTest()
         {
             Assert.Throws<ArgumentException>(() => HighestProductOf3(new int[] { 1 }));
         }
 
         [Fact]
-        public void ExceptionWithTwoNumbersTest()
+        public void HighestProductOf3_ExceptionWithTwoNumbersTest()
         {
             Assert.Throws<ArgumentException>(() => HighestProductOf3(new int[] { 1, 1 }));
         }
@@ -146,7 +154,7 @@ namespace csharp_learning.Greedyalgorithms
         // Version2
 
         [Fact]
-        public void ShortArrayTestVersion2()
+        public void HighestProductOf3Version2_ShortArrayTestVersion2()
         {
             var actual = HighestProductOf3Version2(new int[] { 1, 2, 3, 4 });
             var expected = 24;
@@ -154,7 +162,7 @@ namespace csharp_learning.Greedyalgorithms
         }
 
         [Fact]
-        public void LongerArrayTestVersion2()
+        public void HighestProductOf3Version2_LongerArrayTestVersion2()
         {
             var actual = HighestProductOf3Version2(new int[] { 6, 1, 3, 5, 7, 8, 2 });
             var expected = 336;
@@ -162,7 +170,7 @@ namespace csharp_learning.Greedyalgorithms
         }
 
         [Fact]
-        public void ArrayHasOneNegativeTestVersion2()
+        public void HighestProductOf3Version2_ArrayHasOneNegativeTestVersion2()
         {
             var actual = HighestProductOf3Version2(new int[] { -5, 4, 8, 2, 3 });
             var expected = 96;
@@ -170,15 +178,15 @@ namespace csharp_learning.Greedyalgorithms
         }
 
         [Fact]
-        public void ArrayHasTwoNegativesTestVersion2()
+        public void HighestProductOf3Version2_ArrayHasTwoNegativesTestVersion2()
         {
             var actual = HighestProductOf3Version2(new int[] { -10, 1, 3, 2, -10 });
-            var expected = 6;
+            var expected = 300;
             Assert.Equal(expected, actual);
         }
 
         [Fact]
-        public void ArrayHasAllNegativesTestVersion2()
+        public void HighestProductOf3Version2_ArrayHasAllNegativesTestVersion2()
         {
             var actual = HighestProductOf3Version2(new int[] { -5, -1, -3, -2 });
             var expected = -6;

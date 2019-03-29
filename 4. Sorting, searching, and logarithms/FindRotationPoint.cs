@@ -45,7 +45,7 @@ namespace csharp_learning.Sortingsearchingandlogarithms
         // Tests
 
         [Fact]
-        public void SmallArrayTest()
+        public void FindRotationPoint_SmallArrayTest()
         {
             var actual = FindRotationPoint(new string[] { "cape", "cake" });
             var expected = 1;
@@ -53,16 +53,15 @@ namespace csharp_learning.Sortingsearchingandlogarithms
         }
 
         [Fact]
-        public void MediumArrayTest()
+        public void FindRotationPoint_MediumArrayTest()
         {
-            var actual = FindRotationPoint(new string[] { "grape", "orange", "plum", "radish",
-            "apple" });
+            var actual = FindRotationPoint(new string[] { "grape", "orange", "plum", "radish", "apple" });
             var expected = 4;
             Assert.Equal(expected, actual);
         }
 
         [Fact]
-        public void LargeArrayTest()
+        public void FindRotationPoint_LargeArrayTest()
         {
             var actual = FindRotationPoint(
                 new string[] { "ptolemaic", "retrograde", "supplant", "undulate", "xenoepist",
@@ -72,7 +71,7 @@ namespace csharp_learning.Sortingsearchingandlogarithms
         }
 
         [Fact]
-        public void PossiblyMissingEdgeCaseTest()
+        public void FindRotationPoint_PossiblyMissingEdgeCaseTest()
         {
             var actual = FindRotationPoint(
                 new string[] { "k","v","a","b","c","d","e","g","i" });
