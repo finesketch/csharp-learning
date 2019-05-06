@@ -16,6 +16,7 @@
     <Folder Include="9. System design\" />
     <Folder Include="7. Queues and stacks\" />
     <Folder Include="12. Combinatorics, probability, and other math\" />
+    <Folder Include="10. Programming\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="xunit" Version="2.4.0" />

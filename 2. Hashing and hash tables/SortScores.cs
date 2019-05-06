@@ -37,6 +37,27 @@ namespace csharp_learning.Hashingandhashtables
             return sortedScores;
         }
 
+        public static int[] SortScores1(int[] unorderedScores, int highestPossibleScore)
+        {
+            // Sort the scores in O(n) time
+            var sorted = new int[unorderedScores.Length];
+            int sortedCount = 0;
+
+            for (int i = highestPossibleScore; i > 0; i--)
+            {
+                foreach (var score in unorderedScores)
+                {
+                    if (i == score)
+                    {
+                        sorted[sortedCount] = i;
+                        sortedCount++;
+                    }
+                }
+            }
+
+            return sorted;
+        }
+
 
         // Tests
 
@@ -78,6 +99,51 @@ namespace csharp_learning.Hashingandhashtables
 
         [Fact]
         public void SortScores_RepeatedScoresTest()
+        {
+            var scores = new int[] { 20, 10, 30, 30, 10, 20 };
+            var expected = new int[] { 30, 30, 20, 20, 10, 10 };
+            var actual = SortScores(scores, 100);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void SortScores1_NoScoresTest()
+        {
+            var scores = new int[] { };
+            var expected = new int[] { };
+            var actual = SortScores(scores, 100);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void SortScores1_OneScoreTest()
+        {
+            var scores = new int[] { 55 };
+            var expected = new int[] { 55 };
+            var actual = SortScores(scores, 100);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void SortScores1_TwoScoresTest()
+        {
+            var scores = new int[] { 30, 60 };
+            var expected = new int[] { 60, 30 };
+            var actual = SortScores(scores, 100);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void SortScores1_ManyScoresTest()
+        {
+            var scores = new int[] { 37, 89, 41, 65, 91, 53 };
+            var expected = new int[] { 91, 89, 65, 53, 41, 37 };
+            var actual = SortScores(scores, 100);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void SortScores1_RepeatedScoresTest()
         {
             var scores = new int[] { 20, 10, 30, 30, 10, 20 };
             var expected = new int[] { 30, 30, 20, 20, 10, 10 };

@@ -53,8 +53,7 @@ namespace csharp_learning.Arrayandstringmanipulation
         public static List<Meeting> MergeRanges(List<Meeting> meetings)
         {
             // Make a copy so we don't destroy the input, and sort by start time
-            var sortedMeetings = meetings.Select(m => new Meeting(m.StartTime, m.EndTime))
-                .OrderBy(m => m.StartTime).ToList();
+            var sortedMeetings = meetings.OrderBy(m => m.StartTime).ToList();
 
             // Initialize mergedMeetings with the earliest meeting
             var mergedMeetings = new List<Meeting> { sortedMeetings[0] };

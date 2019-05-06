@@ -95,6 +95,33 @@ namespace csharp_learning.Greedyalgorithms
             return productsOfAllIntsExceptAtIndex;
         }
 
+        public static int[] GetProductsOfAllIntsExceptAtIndex3(int[] intArray)
+        {
+            // Make an array with the products
+            if (intArray.Length < 2)
+            {
+                throw new ArgumentException("error");
+            }
+
+            var newArray = new int[intArray.Length];
+
+            for (var i = 0; i < intArray.Length; i++)
+            {
+                int product = 1;
+
+                for (var j = 0; j < intArray.Length; j++)
+                {
+                    if (i != j)
+                    {
+                        product *= intArray[j];
+                    }
+                }
+
+                newArray[i] = product;
+            }
+
+            return newArray;
+        }
 
 
 
@@ -160,6 +187,8 @@ namespace csharp_learning.Greedyalgorithms
             Assert.Throws<ArgumentException>(() => GetProductsOfAllIntsExceptAtIndex(new int[] { 1 }));
         }
 
+        // Version2
+
         [Fact]
         public void GetProductsOfAllIntsExceptAtIndex2_SmallArrayInputTest()
         {
@@ -218,6 +247,68 @@ namespace csharp_learning.Greedyalgorithms
         public void GetProductsOfAllIntsExceptAtIndex2_ExceptionWithOneNumberInputTest()
         {
             Assert.Throws<ArgumentException>(() => GetProductsOfAllIntsExceptAtIndex2(new int[] { 1 }));
+        }
+
+        // version 3
+
+        [Fact]
+        public void GetProductsOfAllIntsExceptAtIndex3_SmallArrayInputTest()
+        {
+            var expected = new int[] { 6, 3, 2 };
+            var actual = GetProductsOfAllIntsExceptAtIndex3(new int[] { 1, 2, 3 });
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void GetProductsOfAllIntsExceptAtIndex3_LongArrayInputTest()
+        {
+            var expected = new int[] { 120, 480, 240, 320, 960, 192 };
+            var actual = GetProductsOfAllIntsExceptAtIndex3(new int[] { 8, 2, 4, 3, 1, 5 });
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void GetProductsOfAllIntsExceptAtIndex3_InputHasOneZeroTest()
+        {
+            var expected = new int[] { 0, 0, 36, 0 };
+            var actual = GetProductsOfAllIntsExceptAtIndex3(new int[] { 6, 2, 0, 3 });
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void GetProductsOfAllIntsExceptAtIndex3_InputHasTwoZerosTest()
+        {
+            var expected = new int[] { 0, 0, 0, 0, 0 };
+            var actual = GetProductsOfAllIntsExceptAtIndex3(new int[] { 4, 0, 9, 1, 0 });
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void GetProductsOfAllIntsExceptAtIndex3_InputHasOneNegativeNumberTest()
+        {
+            var expected = new int[] { 32, -12, -24 };
+            var actual = GetProductsOfAllIntsExceptAtIndex3(new int[] { -3, 8, 4 });
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void GetProductsOfAllIntsExceptAtIndex3_AllNegativesInputTest()
+        {
+            var expected = new int[] { -8, -56, -14, -28 };
+            var actual = GetProductsOfAllIntsExceptAtIndex3(new int[] { -7, -1, -4, -2 });
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void GetProductsOfAllIntsExceptAtIndex3_ExceptionWithEmptyInputTest()
+        {
+            Assert.Throws<ArgumentException>(() => GetProductsOfAllIntsExceptAtIndex3(new int[] { }));
+        }
+
+        [Fact]
+        public void GetProductsOfAllIntsExceptAtIndex3_ExceptionWithOneNumberInputTest()
+        {
+            Assert.Throws<ArgumentException>(() => GetProductsOfAllIntsExceptAtIndex3(new int[] { 1 }));
         }
     }
 }

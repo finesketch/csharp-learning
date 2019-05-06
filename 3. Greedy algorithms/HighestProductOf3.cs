@@ -89,7 +89,23 @@ namespace csharp_learning.Greedyalgorithms
             return Math.Max(highestProductOf3Descending, highestProductOf3Ascending);
         }
 
+        public static int HighestProductOf3Version3(int[] arrayOfInts)
+        {
+            // Calculate the highest product of three numbers
+            if (arrayOfInts.Length < 3)
+            {
+                throw new ArgumentException("error");
+            }
 
+            var highest3 = arrayOfInts.ToList().OrderByDescending(p => p).Take(3);
+            int highest3product = 1;
+            foreach (var item in highest3)
+            {
+                highest3product *= item;
+            }
+
+            return highest3product;
+        }
 
         // Tests
 
@@ -190,6 +206,16 @@ namespace csharp_learning.Greedyalgorithms
         {
             var actual = HighestProductOf3Version2(new int[] { -5, -1, -3, -2 });
             var expected = -6;
+            Assert.Equal(expected, actual);
+        }
+
+        // Version3
+
+        [Fact]
+        public void HighestProductOf3Version3_ShortArrayTestVersion2()
+        {
+            var actual = HighestProductOf3Version3(new int[] { 1, 2, 3, 4 });
+            var expected = 24;
             Assert.Equal(expected, actual);
         }
     }
